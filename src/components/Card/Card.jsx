@@ -1,23 +1,25 @@
+
 import React from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types';
-import { Date, Image, Description } from '../../modules/Home/Home.styled';
+import styled from 'styled-components'
+import { Date, CardImage, Description, SideCardContainer, CardButton } from '../../modules/Home/Home.styled';
 
+const Card = ({ date, name, description, headPicture, BreadCrumbs, onClickCard }) => (
+  <SideCardContainer>
+    <CardImage src={headPicture}></CardImage>
+    <Date>{date}</Date>
+    <Description>{description}</Description>
+    <CardButton onClick={() => onClickCard(name)}>{BreadCrumbs}</CardButton>
+  </SideCardContainer>
+)
 
-const Card = ({date, description, headPicture}) => (
-    <div style={{ color: '#fff' }}>
-        <Image>{headPicture}</Image>
-      <Date>{date}</Date>
-      <Description>{description}</Description>
-    </div>
-  )
+Card.propTypes = {
+  date: PropTypes.date,
+  name: PropTypes.string,
+  headPicture: PropTypes.string,
+  description: PropTypes.string,
+  BreadCrumbs: PropTypes.string,
+  onClickCard: PropTypes.func
+}
 
-
-
-  Card.propTypes  = {
-    date: PropTypes.date,
-    headPicture: PropTypes.string,
-    description: PropTypes.string
-  }
-
-  export default Card
+export default Card

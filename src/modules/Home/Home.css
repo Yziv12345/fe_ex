@@ -24,11 +24,12 @@
 }
 
 .card-container {
-    height: 820px;
+    position: absolute;
     width: 1440px;
+    height: 820px;
     left: 0px;
     top: 347px;
-    border-radius: 0px;
+    background: linear-gradient(180deg, rgba(247, 248, 255, 0) -3.39%, rgba(220, 226, 255, 0.4) 48.31%, rgba(247, 248, 255, 0) 100%);
 }
 
 .header-p {
@@ -37,6 +38,14 @@
     left: 160px;
     top: 314px;
     border-radius: nullpx;
+}
+
+.card {
+    position: absolute;
+    left: 11.11%;
+    right: 64.44%;
+    top: 78.04%;
+    bottom: 10.79%;
 }
 
 .header-h {

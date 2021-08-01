@@ -1,13 +1,40 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-color: 'none';
+background: #E5E5E5;
   `
   ;
 
+export const CardsDispaly = styled.div`
+  background: #E5E5E5;
+  bottom: 0px;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  `
+  ;
+
+export const CardContainerStyle = styled.div`
+dispaly: 'flex';
+position: absolute;
+width: 448px;
+height: 128px;
+left: 832px;
+top: 538px;
+
+/* Bright */
+
+background: #FFFFFF;
+box-shadow: 0px 8px 24px #DCE2FF;
+border-radius: 12px;
+`
+  ;
 
 export const Date = styled.div`
-position: absolute;
+/* Jun 22, 2021 */
+
 width: 84px;
 height: 24px;
 left: 184px;
@@ -54,6 +81,15 @@ export const Image = styled.img`
 height: 50%;
 width: 80%;
 `
+export const CardImage = styled.img`
+position: absolute;
+width: 117px;
+height: 151px;
+left: 832px;
+top: 523px;
+
+background: url(shutterstock_1914449341 [Converted].png);
+`
 
 export const MainCardContainer = styled.div`
 position: absolute;
@@ -68,3 +104,24 @@ background: #FFFFFF;
 box-shadow: 0px 8px 24px #DCE2FF;
 border-radius: 12px;
 `;
+
+export const SideCardContainer = styled.div`
+
+`;
+
+export const CardButton = styled.button`
+
+width: 90px;
+height: 32px;
+left: 186px;
+top: 930px;
+
+/* Bright */
+
+background: #FFFFFF;
+/* Secondary-00 */
+
+border: 1px solid #6F888E;
+border-radius: 4px;
+`;
+

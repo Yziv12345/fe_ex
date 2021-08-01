@@ -3,21 +3,24 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import './mainCard.css'
-import { Date, Image, Description, MainCardContainer } from '../../modules/Home/Home.styled';
+import { Date, Image, Description, MainCardContainer, CardButton } from '../../modules/Home/Home.styled';
 
-const MainCard = ({ date, description, headPicture }) => (
+const MainCard = ({ date, name, description, headPicture, BreadCrumbs, onClickCard }) => (
     <MainCardContainer>
         <Image src={headPicture}></Image>
-        {/* <Title>{title}</Title> */}
         <Date>{date}</Date>
         <Description>{description}</Description>
+        <CardButton onClick={() => onClickCard(name)}>{BreadCrumbs}</CardButton>
     </MainCardContainer>
 )
 
 MainCard.propTypes = {
     date: PropTypes.date,
     headPicture: PropTypes.string,
-    description: PropTypes.string
+    name: PropTypes.string,
+    description: PropTypes.string,
+    BreadCrumbs: PropTypes.string,
+    onClickCard: PropTypes.func
 }
 
 export default MainCard
