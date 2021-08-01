@@ -1,5 +1,6 @@
 import React from 'react';
 import './Article.css';
+import PropTypes from 'prop-types';
 import { gql, useQuery } from '@apollo/client';
 import { Wrapper } from './Article.styled';
 
@@ -40,13 +41,13 @@ const mapArticle = (data) => {
     })
   }
 
-  return articels
+  return articel
 }
 
 
 const Article = () => {
   const { data, loading, error } = useQuery(ARTICLES_QUERY);
-  const articles = mapArticles(props.data)
+  const articles = mapArticle(data)
 
 
   return (
