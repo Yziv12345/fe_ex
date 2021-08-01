@@ -109,7 +109,7 @@ export const SideCardContainer = styled.div`
 
 `;
 
-export const CardButton = styled.div`
+export const CardButton = styled.button`
 
 width: 90px;
 height: 32px;

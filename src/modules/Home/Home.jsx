@@ -4,6 +4,8 @@ import { Wrapper } from './Home.styled';
 import { gql, useQuery } from '@apollo/client';
 import CardContainer from 'src/components/CardContainer/CardContainer';
 import CardsFooter from 'src/components/CardsFooter/CardsFooter'
+import loader from 'src/assets/svg/loader.svg'
+import Article from '../Article/Article'
 
 // graphql playground:
 // https://gapi-browser.storyblok.com/?token=HwsawDuLR2g1sBoukqkPDQtt
@@ -52,6 +54,8 @@ const Home = () => {
         }}>Main Blog page description Main Blog page description Main Blog page description Main Blog page description Main Blog page description </p>
 
       </div>
+      {loading && <loader>
+        </loader>}
       {
         data && <CardContainer
           data={data}

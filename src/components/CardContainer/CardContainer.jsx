@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../../modules/Home/Home.css';
 import Card from '../Card/Card'
 import MainCard from '../mainCard/MainCard'
+import { useHistory } from "react-router-dom";
 import { Wrapper, CardContainerStyle, CardsDispaly } from '../../modules/Home/Home.styled';
 
 const mapArticles = (data) => {
@@ -48,15 +49,26 @@ const CardContainer = (props) => {
     let articels = filteredArt[0]
     const mainCard = useState(filteredArt[1])
     const allArticles = useState(filteredArt[2])
+    const history = useHistory();
+
+
+    const onCardClicked = (name) => {
+        
+        history.push(`article/${name}`)
+
+    }
+
     return (
 
         <div className="card-container">
             {mainCard &&
                 <MainCard
                     date={mainCard[0].date}
+                    name={mainCard[0].name}
                     description={mainCard[0].header}
                     headPicture={mainCard[0].img}
                     BreadCrumbs={mainCard[0].breadCrumbs}
+                    onClickCard={(name) => onCardClicked(name)}
                 />
             }
             {articels.length > 0 && <CardContainerStyle>
@@ -66,9 +78,11 @@ const CardContainer = (props) => {
 
                             <Card key={idx}
                                 date={article.date}
+                                name={article.name}
                                 description={article.header}
                                 headPicture={article.img}
                                 BreadCrumbs={article.breadCrumbs}
+                                onClickCard={(name) => onCardClicked(name)}
                             />
                         )
                     }
@@ -77,7 +91,7 @@ const CardContainer = (props) => {
                 }
             </CardContainerStyle>
             }
-    
+
             {/* <p>{`loading: ${loading}`}</p>
         <p>{`error: ${error}`}</p>
         <p>data: {JSON.stringify(data)}</p> */}
