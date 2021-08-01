@@ -1,0 +1,57 @@
+.home-container {
+    color: #999;
+    display: flex;
+}
+
+/* Style the header */
+
+.header_footer {
+    height: 80px;
+    width: 1440px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+}
+
+/* Style the header */
+
+.header {
+    background-color: #E5E5E5;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+}
+
+.card-container {
+    height: 820px;
+    width: 1440px;
+    left: 0px;
+    top: 347px;
+    border-radius: 0px;
+}
+
+.header-p {
+    height: 64px;
+    width: 727px;
+    left: 160px;
+    top: 314px;
+    border-radius: nullpx;
+}
+
+.header-h {
+    /* position: absolute; */
+    width: 447px;
+    height: 90px;
+    left: 160px;
+    top: 200px;
+    /* /H1/ desktop */
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 90px;
+    /* identical to box height, or 112% */
+    /* Dark */
+    color: #2E4056;
+}
