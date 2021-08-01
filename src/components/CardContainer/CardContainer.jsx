@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import '../../modules/Home/Home.css';
 import Card from '../Card/Card'
 import MainCard from '../mainCard/MainCard'
-import { Wrapper, CardContainerStyle } from '../../modules/Home/Home.styled';
+import { Wrapper, CardContainerStyle, CardsDispaly } from '../../modules/Home/Home.styled';
 
 const mapArticles = (data) => {
     let articels = []
     let mainCard = null
+    let allArticles = []
     if (data && data.ArticleItems.items && data.ArticleItems.total > 0) {
 
         data.ArticleItems.items.forEach((article) => {
@@ -20,6 +21,7 @@ const mapArticles = (data) => {
                     categories: article.content.categories.name,
                     img: article.content.headPicture.filename
                 }
+                allArticles.push(mainCard)
             }
             else {
                 let temp = {
@@ -31,12 +33,13 @@ const mapArticles = (data) => {
                     img: article.content.headPicture.filename
                 }
                 articels.push(temp)
+                allArticles.push(temp)
 
             }
         });
     }
 
-    return [articels, mainCard]
+    return [articels, mainCard, allArticles]
 }
 
 const CardContainer = (props) => {
@@ -44,8 +47,7 @@ const CardContainer = (props) => {
     const filteredArt = mapArticles(props.data)
     let articels = filteredArt[0]
     const mainCard = useState(filteredArt[1])
-
-    debugger
+    const allArticles = useState(filteredArt[2])
     return (
 
         <div className="card-container">
@@ -75,8 +77,7 @@ const CardContainer = (props) => {
                 }
             </CardContainerStyle>
             }
-
-
+    
             {/* <p>{`loading: ${loading}`}</p>
         <p>{`error: ${error}`}</p>
         <p>data: {JSON.stringify(data)}</p> */}

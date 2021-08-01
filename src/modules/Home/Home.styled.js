@@ -1,7 +1,18 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-color: 'none';
+background: #E5E5E5;
+  `
+  ;
+
+export const CardsDispaly = styled.div`
+  background: #E5E5E5;
+  bottom: 0px;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
   `
   ;
 
